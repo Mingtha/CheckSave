@@ -1,0 +1,63 @@
+{
+    "method": "POST",
+    "url": "/mcloud/mag/ProxyForText/w3mbm-new/rest/mattend/punchCard",
+    "http_version": "HTTP/1.1",
+    "request_headers": {
+        "Host": "w3m.huawei.com",
+        "uuid": "C2F2F034-FCF2-4416-BAC8-F1E71EAC6881",
+        "deviceName": "iPhone14,4",
+        "Accept": "*/*",
+        "appName": "WeLink",
+        "appVersion": "5.60.20",
+        "buildCode": "527",
+        "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Content-Type": "application/json",
+        "businessVersionCode": "527",
+        "osTarget": "1",
+        "lang": "zh",
+        "User-Agent": "WeLink/5.60.20 (iPhone; iOS 17.5.1; Scale/3.00)",
+        "traceId": "WK-71796BCE-AAEF-48DB-8F6B-4B6D8BC91FBC",
+        "Content-Length": "243",
+        "Cookie": "csrftoken=DBbXl0JWhkVh5R8Lig1dhEGSE0rYv4IK; ztsg_ruuid=8323e4ba8e5631e6-edbd-4388-91bd-3029af35e398; hwsso_login=V0040x4Q76KmHn3JjeElCExWkEVV_anQGCoox13HpzPpUckUsX2G3LdeaIcO8sw3zyoM30G_bOdIjSTwys5uk_bMOY2xk53zlINMZ_aJ46v_a7OLQZbsilk4QST6ATh3bUbwZn2la_bkU3k6hvxFC9uHah2EqAS3lqMurQnj5vIwr3hWOI_aHo2_bC6llKXSbZKKNBSWdXM4P6AhgXc2qXnkA4NB3bsfwBP2_aIxLJ_bNVSFr4DX4b9N5ErpB8Dhma3zp5Je9APTG5L_aqtPd9JMLqoo6HQCmQAFQ78LH2hb_bZx2cv00e0gklTBE_b_axnmKIHrbJRzxuC3JjrPyFwsazfi9Pi4Iyn9_bhVA_c_c; hwssot3=31064340413163; login_logFlag=in; login_sid=E2-28-1E-7B-91-E2-66-B6-FE-90-5A-4B-D0-0D-5B-ED-AA-12-4D-C7-A9-FF-C6-DC-3C-68-2E-ED-75-BD-8D-12-BD-B0-89-4D-C4-54-80-37; login_uid=21-11-36-43-88-AE-0B-9C-CC-26-30-B6-B4-48-AF-03; suid=21-11-36-43-88-AE-0B-9C-CC-26-30-B6-B4-48-AF-03; x-wlk-Authorization=565c8e2d-f516-4dc6-8f35-4fddf63aa5d9; hwssotinter3=31064340413163; SESSION=MjExYWIyY2YtMTNiOC00MzgxLTllY2EtNGZmMjEwNzI2MjBh; w3_huawei_com_westore_sticky=pro_dggekshccp-1663725056-v84eq.huawei.com_63778:3; JSESSIONID=D6BA3E498839DE50924B27368B45E540A0743704CFCEF0F2; magot3=31064340727443; hwssotinter=09-CE-50-70-2A-3A-D3-7B-41-76-5C-37-3C-70-7F-E5; hwssot=09-CE-50-70-2A-3A-D3-7B-41-76-5C-37-3C-70-7F-E5",
+        "Connection": "keep-alive"
+    },
+    "request_body": {
+        "locale": "cn",
+        "deviceId": "C2F2F034-FCF2-4416-BAC8-F1E71EAC6881",
+        "meapip": "198.18.78.111",
+        "x": "114.554798",
+        "employeeNumber": "30060936",
+        "deviceType": "0",
+        "y": "30.476483",
+        "deviceVersionId": "17.5.1",
+        "ip": "192.168.0.101",
+        "deviceModel": "iPhone14,4"
+    },
+    "response_body_failed": {
+        "status": "0",
+        "data": null,
+        "msg": "您不在打卡有效区哦，走近点试试吧！",
+        "type": "2"
+    },
+    "response_body_success": {
+        "status": "1",
+        "msg": "打卡成功",
+        "type": "3",
+        "data": {
+            "sysDate": "2024-08-31 19:01:48",
+            "location": "海思光工厂PMD（1）",
+            "site": 81035208
+        }
+    },
+    "body": {
+        "deviceId": "deviceId",
+        "username": "username",
+        "type": "type",
+        "date": "date",
+        "x": "x",
+        "y": "y",
+        "location": "location",
+        "site": "site"
+    }
+}

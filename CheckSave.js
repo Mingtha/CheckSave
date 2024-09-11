@@ -22,7 +22,7 @@ $task.fetch($request).then(
             // 将更新后的打卡记录持久化存储
             $prefs.setValueForKey(JSON.stringify(savedRecords), 'checkRecords');
         } catch (e) {
-            $notify('CheckSave Error', '存储失败', e.message);
+            $notify('CheckSave Error', '存储失败', `${e}`);
         }
         $done(response);
     },

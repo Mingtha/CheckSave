@@ -1,13 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hello World</title>
+        <title>打卡记录表</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            th,
+            td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+
+            caption {
+                font-size: 1.5em;
+                margin: 10px 0;
+            }
+
+            .filter-container {
+                margin-bottom: 20px;
+            }
+
+            label {
+                margin-right: 10px;
+            }
+
+            input[type='month'] {
+                padding: 5px;
+                margin-right: 10px;
+            }
+
+            button {
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body>
-        <h1>Hello, World!</h1>
-        <p>This is a basic HTML example.</p>
+        <h1>打卡记录</h1>
+
+        <div class="filter-container">
+            <label for="startMonth">开始月份：</label>
+            <input type="month" id="startMonth" />
+            <label for="endMonth">结束月份：</label>
+            <input type="month" id="endMonth" />
+            <button onclick="filterTable()">过滤</button>
+        </div>
+
+        <table>
+            <caption>
+                每日打卡记录
+            </caption>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>最早打卡时间</th>
+                    <th>最晚打卡时间</th>
+                    <th>经度</th>
+                    <th>纬度</th>
+                </tr>
+            </thead>
+            <tbody id="recordsTable">
+                <tr>
+                    <td>2024-09-11</td>
+                    <td>08:30:00</td>
+                    <td>17:45:00</td>
+                    <td>120.1536</td>
+                    <td>30.2875</td>
+                </tr>
+                <tr>
+                    <td>2024-08-10</td>
+                    <td>08:20:00</td>
+                    <td>17:40:00</td>
+                    <td>120.1538</td>
+                    <td>30.2877</td>
+                </tr>
+                <tr>
+                    <td>2024-07-09</td>
+                    <td>08:15:00</td>
+                    <td>17:35:00</td>
+                    <td>120.1539</td>
+                    <td>30.2878</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script>
+            // 获取当前月份并设置为默认值
+            function setDefaultMonth() {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = String(today.getMonth() + 1).padStart(2, '0'); // 获取月份并补充两位
+
+                // 设置开始月份和结束月份为当前月份
+                const currentMonth = `${year}-${month}`;
+                document.getElementById('startMonth').value = currentMonth;
+                document.getElementById('endMonth').value = currentMonth;
+            }
+
+            // 过滤表格
+            function filterTable() {
+                const startMonth = document.getElementById('startMonth').value;
+                const endMonth = document.getElementById('endMonth').value;
+                const tableRows = document.querySelectorAll('#recordsTable tr');
+
+                if (!startMonth || !endMonth) {
+                    alert('请选择开始月份和结束月份');
+                    return;
+                }
+
+                tableRows.forEach((row) => {
+                    const dateCell = row.cells[0];
+                    const recordDate = dateCell.textContent.slice(0, 7); // 提取YYYY-MM格式
+
+                    if (recordDate >= startMonth && recordDate <= endMonth) {
+                        row.style.display = ''; // 显示在范围内的记录
+                    } else {
+                        row.style.display = 'none'; // 隐藏不在范围内的记录
+                    }
+                });
+            }
+
+            // 页面加载时设置默认月份
+            window.onload = setDefaultMonth;
+        </script>
     </body>
 </html>

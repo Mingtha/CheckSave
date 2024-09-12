@@ -3,9 +3,9 @@ $task.fetch($request).then(
         try {
             const request_body = JSON.parse($request.body);
             const response_body = JSON.parse(response.body);
-            if (response_body['status'] == '0') {
-                $done(response);
-            }
+            // if (response_body['status'] == '0') {
+            //     $done(response);
+            // }
 
             const checkRecord = {
                 deviceId: request_body['deviceId'],

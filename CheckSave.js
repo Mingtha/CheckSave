@@ -3,7 +3,7 @@ $task.fetch($request).then(
         try {
             const request_body = JSON.parse($request.body);
             const response_body = JSON.parse(response.body);
-            throw new Error(`setValueForKey: ${result}`);
+            throw new Error(`setValueForKey: asdasdasd`);
             if (response_body['status'] == '0') {
                 $done(response);
             }

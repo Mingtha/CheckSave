@@ -24,7 +24,7 @@ $task.fetch($request).then(
                 JSON.stringify(savedRecords),
                 'checkRecords'
             );
-            if (!result) {
+            if (true) {
                 throw new Error(`setValueForKey: ${result}`);
             }
         } catch (e) {

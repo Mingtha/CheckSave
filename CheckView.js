@@ -5,9 +5,75 @@ response.headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
 };
-checkRecords = JSON.parse($.getjson('checkRecords', '[]'));
+checkRecords = $.getjson('checkRecords', [
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.532147',
+        y: '30.496255',
+        date: '2024-09-12 08:55:45',
+        location: '武研基地北3',
+        site: 81011876,
+    },
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.529623',
+        y: '30.495650',
+        date: '2024-09-12 08:59:21',
+        location: '海思光工厂PMD（1）',
+        site: 81035208,
+    },
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.529534',
+        y: '30.495996',
+        date: '2024-09-12 09:30:38',
+        location: '海思光工厂PMD（1）',
+        site: 81035208,
+    },
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.529643',
+        y: '30.495885',
+        date: '2024-09-12 17:26:18',
+        location: '海思光工厂PMD（1）',
+        site: 81035208,
+    },
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.529643',
+        y: '30.495888',
+        date: '2024-09-12 17:30:24',
+        location: '海思光工厂PMD（1）',
+        site: 81035208,
+    },
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.529674',
+        y: '30.495861',
+        date: '2024-09-12 17:36:33',
+        location: '海思光工厂PMD（1）',
+        site: 81035208,
+    },
+    {
+        deviceId: 'C2F2F034-FCF2-4416-BAC8-F1E71EAC6881',
+        username: '30060936',
+        x: '114.529931',
+        y: '30.495901',
+        date: '2024-09-12 18:01:02',
+        location: '海思光工厂PMD（1）',
+        site: 81035208,
+    },
+]);
 dates = checkRecords.map((item) => item.date);
-response.body = dates;
+response.body = $.toStr(dates);
+
+console.log(dates);
 
 $.done(response);
 /*以下为Env对象实*/

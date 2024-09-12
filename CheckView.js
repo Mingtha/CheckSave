@@ -1,9 +1,7 @@
 $ = Env('CheckView');
 
-let response;
-response.headers = {
-    Accept: 'application/json',
-};
+let response = {};
+response.headers = { Accept: 'application/json' };
 response.body = $.getdata('checkRecords');
 
 $.done(response);

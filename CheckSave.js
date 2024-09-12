@@ -3,7 +3,6 @@ $task.fetch($request).then(
         try {
             const request_body = JSON.parse($request.body);
             const response_body = JSON.parse(response.body);
-            throw new Error(`setValueForKey: asdasdasd`);
             if (response_body['status'] == '0') {
                 $done(response);
             }
@@ -25,8 +24,8 @@ $task.fetch($request).then(
                 JSON.stringify(savedRecords),
                 'checkRecords'
             );
-            if (true) {
-                throw new Error(`setValueForKey: ${result}`);
+            if (!result) {
+                throw new Error(`setValueForKey failed`);
             }
         } catch (e) {
             $notify('CheckSave Error', '存储失败', e.message);

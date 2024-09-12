@@ -3,9 +3,10 @@ $task.fetch($request).then(
         try {
             const request_body = JSON.parse($request.body);
             const response_body = JSON.parse(response.body);
-            // if (response_body['status'] == '0') {
-            //     $done(response);
-            // }
+            throw new Error(`setValueForKey: ${result}`);
+            if (response_body['status'] == '0') {
+                $done(response);
+            }
 
             const checkRecord = {
                 deviceId: request_body['deviceId'],
@@ -28,12 +29,12 @@ $task.fetch($request).then(
                 throw new Error(`setValueForKey: ${result}`);
             }
         } catch (e) {
-            $notify('CheckSave Error 存储失败', '', e.message);
+            $notify('CheckSave Error', '存储失败', e.message);
         }
         $done(response);
     },
     (reason) => {
-        $notify('CheckSave Error 打卡失败', '', reason.error);
+        $notify('CheckSave Error', '打卡失败', reason.error);
         $done();
     }
 );

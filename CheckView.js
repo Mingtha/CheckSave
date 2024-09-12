@@ -5,7 +5,9 @@ response.headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
 };
-response.body = $.getdata('checkRecords');
+checkRecords = $.getdata('checkRecords');
+dates = checkRecords.map((item) => item.date);
+response.body = dates;
 
 $.done(response);
 /*以下为Env对象实*/

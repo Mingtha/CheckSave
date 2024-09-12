@@ -28,7 +28,7 @@ $task.fetch($request).then(
                 throw new Error(`setValueForKey: ${result}`);
             }
         } catch (e) {
-            $notify('CheckSave Error 存储失败', '', `${e}`);
+            $notify('CheckSave Error 存储失败', '', e.message);
         }
         $done(response);
     },

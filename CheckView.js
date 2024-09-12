@@ -1,6 +1,6 @@
 $ = Env('CheckView');
 
-response;
+let response;
 response.headers = {
     Accept: 'application/json',
 };

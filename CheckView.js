@@ -1,12 +1,14 @@
 $ = Env('CheckView');
 
-/*
+response;
+response.headers = {
+    Accept: 'application/json',
+};
+response.body = $.getdata('checkRecords');
 
+$.done(response);
+/*以下为Env对象实*/
 
-以下为Env对象实现
-
-
-*/
 function Env(name, opts) {
     class Http {
         constructor(env) {

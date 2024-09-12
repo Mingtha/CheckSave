@@ -71,7 +71,7 @@ checkRecords = $.getjson('checkRecords', [
     },
 ]);
 dates = checkRecords.map((item) => item.date);
-response.body = '\n'.join(dates);
+response.body = dates.join('\n');
 
 console.log(dates);
 

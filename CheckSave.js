@@ -17,6 +17,7 @@ $task.fetch($request).then(
                 location: response_body['data']['location'],
                 site: response_body['data']['site'],
             };
+            console.log(JSON.stringfy(checkRecord))
             let savedRecords = $prefs.valueForKey('checkRecords') || '[]';
             savedRecords = JSON.parse(savedRecords);
             savedRecords.push(checkRecord);

@@ -1,6 +1,4 @@
 {
-    https://w3m.huawei.com/mcloud/mag/ProxyForText/w3mbm-new/rest/mattend/punchCard?validateUser=false
-    https://w3m.huawei.com/mcloud/mag/ProxyForText/mattend-new/service/punchcard
     "method": "POST",
     "url": "/mcloud/mag/ProxyForText/w3mbm-new/rest/mattend/punchCard",
     "http_version": "HTTP/1.1",

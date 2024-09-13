@@ -13,9 +13,9 @@ $task.fetch($request).then(
                 x: request_body['x'],
                 y: request_body['y'],
 
-                date: response_body['data']['sysDate'],
-                location: response_body['data']['location'],
-                site: response_body['data']['site'],
+                date: response_body['data']['sysDate'] ?? request_body['time'],
+                location: response_body['data']['location'] ?? response_body['location'],
+                site: response_body['data']['site'] ?? response_body['site'],
             };
             console.log(JSON.stringify(checkRecord))
             let savedRecords = $prefs.valueForKey('checkRecords') || '[]';

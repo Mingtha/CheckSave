@@ -5,7 +5,7 @@ response.headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
 };
-checkRecords = JSON.parse($.getjson('checkRecords', '[]'));
+checkRecords = $.getjson('checkRecords');
 dates = checkRecords.map((item) => item.date);
 response.body = dates;
 

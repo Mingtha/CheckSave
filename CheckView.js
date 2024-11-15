@@ -5,8 +5,9 @@ response.headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
 };
-
-console.log(dates);
+checkRecords = JSON.parse($.getjson('checkRecords', '[]'));
+dates = checkRecords.map((item) => item.date);
+response.body = dates;
 
 $.done(response);
 /*以下为Env对象实*/

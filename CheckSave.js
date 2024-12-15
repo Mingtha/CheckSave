@@ -34,7 +34,7 @@ $task.fetch($request).then(
         $done(response);
     },
     (reason) => {
-        $notify('CheckSave Error', '打卡失败', reason.error);
+        $notify('CheckSave Error', '打卡 失败', reason.error);
         $done();
     }
 );
